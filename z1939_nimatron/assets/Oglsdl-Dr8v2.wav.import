@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Oglsdl-Dr8v2.wav-029cd5d585855b4d0dcf7b742eca8b50.sample"
+
+[deps]
+
+source_file="res://z1939_nimatron/assets/Oglsdl-Dr8v2.wav"
+dest_files=[ "res://.import/Oglsdl-Dr8v2.wav-029cd5d585855b4d0dcf7b742eca8b50.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=1

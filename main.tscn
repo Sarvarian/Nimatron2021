@@ -1,0 +1,1151 @@
+[gd_scene load_steps=51 format=2]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://z1939_nimatron/assets/art/light_yellow/light_yellow_1.tres" type="Texture" id=2]
+[ext_resource path="res://z1939_nimatron/assets/art/light_green/light_green_0.tres" type="Texture" id=3]
+[ext_resource path="res://z1939_nimatron/assets/art/light_green/light_green_6.tres" type="Texture" id=4]
+[ext_resource path="res://z1939_nimatron/assets/art/light_green/light_green_7.tres" type="Texture" id=5]
+[ext_resource path="res://z1939_nimatron/assets/art/light_green/light_green_8.tres" type="Texture" id=6]
+[ext_resource path="res://z1939_nimatron/assets/art/light_yellow/light_yellow_5.tres" type="Texture" id=7]
+[ext_resource path="res://z1939_nimatron/assets/art/light_blue/light_blue_1.tres" type="Texture" id=8]
+[ext_resource path="res://z1939_nimatron/assets/art/light_blue/light_blue_7.tres" type="Texture" id=9]
+[ext_resource path="res://z1939_nimatron/assets/art/light_green/light_green_9.tres" type="Texture" id=10]
+[ext_resource path="res://z1939_nimatron/assets/art/light_red/light_red.tres" type="Texture" id=11]
+[ext_resource path="res://z1939_nimatron/assets/art/light_blue/light_blue_8.tres" type="Texture" id=12]
+[ext_resource path="res://z1939_nimatron/assets/art/light_yellow/light_yellow_0.tres" type="Texture" id=13]
+[ext_resource path="res://z1939_nimatron/assets/art/light_blue/light_blue_9.tres" type="Texture" id=14]
+[ext_resource path="res://z1939_nimatron/assets/art/light_green/light_green_11.tres" type="Texture" id=15]
+[ext_resource path="res://z1939_nimatron/assets/art/light_blue/light_blue_10.tres" type="Texture" id=16]
+[ext_resource path="res://z1939_nimatron/assets/art/light_green/light_green_2.tres" type="Texture" id=17]
+[ext_resource path="res://z1939_nimatron/assets/art/light_blue/light_blue_14.tres" type="Texture" id=18]
+[ext_resource path="res://z1939_nimatron/assets/art/light_blue/light_blue_15.tres" type="Texture" id=19]
+[ext_resource path="res://z1939_nimatron/assets/art/light_blue/light_blue_17.tres" type="Texture" id=20]
+[ext_resource path="res://z1939_nimatron/assets/art/light_blue/light_blue_0.tres" type="Texture" id=21]
+[ext_resource path="res://z1939_nimatron/assets/art/light_blue/light_blue_11.tres" type="Texture" id=22]
+[ext_resource path="res://z1939_nimatron/assets/art/light_green/light_green_1.tres" type="Texture" id=23]
+[ext_resource path="res://z1939_nimatron/assets/art/light_green/light_green_5.tres" type="Texture" id=24]
+[ext_resource path="res://z1939_nimatron/assets/art/light_blue/light_blue_2.tres" type="Texture" id=25]
+[ext_resource path="res://z1939_nimatron/assets/art/light_green/light_green_3.tres" type="Texture" id=26]
+[ext_resource path="res://z1939_nimatron/assets/art/light_blue/light_blue_4.tres" type="Texture" id=27]
+[ext_resource path="res://z1939_nimatron/assets/art/light_green/light_green_4.tres" type="Texture" id=28]
+[ext_resource path="res://z1939_nimatron/assets/art/light_yellow/light_yellow_3.tres" type="Texture" id=29]
+[ext_resource path="res://z1939_nimatron/assets/art/light_blue/light_blue_5.tres" type="Texture" id=30]
+[ext_resource path="res://z1939_nimatron/assets/art/light_yellow/light_yellow_2.tres" type="Texture" id=31]
+[ext_resource path="res://z1939_nimatron/assets/art/light_blue/light_blue_16.tres" type="Texture" id=32]
+[ext_resource path="res://z1939_nimatron/assets/art/light_yellow/light_yellow_4.tres" type="Texture" id=33]
+[ext_resource path="res://z1939_nimatron/assets/art/light_green/light_green_10.tres" type="Texture" id=34]
+[ext_resource path="res://z1939_nimatron/assets/art/light_blue/light_blue_12.tres" type="Texture" id=35]
+[ext_resource path="res://z1939_nimatron/assets/art/light_blue/light_blue_6.tres" type="Texture" id=36]
+[ext_resource path="res://z1939_nimatron/assets/art/light_blue/light_blue_3.tres" type="Texture" id=37]
+[ext_resource path="res://z1939_nimatron/assets/art/light_blue/light_blue_13.tres" type="Texture" id=38]
+[ext_resource path="res://z1939_nimatron/assets/art/white_flower.tres" type="Texture" id=39]
+[ext_resource path="res://z1939_nimatron/assets/texts/who_extenguishes.tres" type="Texture" id=40]
+[ext_resource path="res://z1939_nimatron/assets/texts/az_nimatron_says.tres" type="Texture" id=41]
+[ext_resource path="res://z1939_nimatron/assets/texts/the_last_light_wins.tres" type="Texture" id=42]
+[ext_resource path="res://z1939_nimatron/assets/art/submit_button/submit_button_green.tres" type="Texture" id=43]
+[ext_resource path="res://z1939_nimatron/assets/art/submit_button/submit_button_red.tres" type="Texture" id=44]
+[ext_resource path="res://z1939_nimatron/scripts/submit_button.gd" type="Script" id=45]
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 216.0
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 596.5
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 945.0
+
+[sub_resource type="CircleShape2D" id=9]
+radius = 1350.5
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 43 ) ],
+"loop": false,
+"name": "Red",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 44 ) ],
+"loop": false,
+"name": "Green",
+"speed": 0.0
+} ]
+
+[node name="Main" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Purticles" type="Node2D" parent="."]
+position = Vector2( 300, 300 )
+scale = Vector2( 0.07, 0.07 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Particles2D" type="CPUParticles2D" parent="Purticles"]
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D2" type="CPUParticles2D" parent="Purticles"]
+rotation = -0.174533
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D3" type="CPUParticles2D" parent="Purticles"]
+rotation = -0.349066
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D4" type="CPUParticles2D" parent="Purticles"]
+rotation = -0.523599
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D5" type="CPUParticles2D" parent="Purticles"]
+rotation = -0.698132
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D6" type="CPUParticles2D" parent="Purticles"]
+rotation = -0.872665
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D7" type="CPUParticles2D" parent="Purticles"]
+rotation = -1.0472
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D8" type="CPUParticles2D" parent="Purticles"]
+rotation = -1.22173
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D9" type="CPUParticles2D" parent="Purticles"]
+rotation = -1.39626
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D10" type="CPUParticles2D" parent="Purticles"]
+rotation = -1.5708
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D11" type="CPUParticles2D" parent="Purticles"]
+rotation = -1.74533
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D12" type="CPUParticles2D" parent="Purticles"]
+rotation = -1.91986
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D13" type="CPUParticles2D" parent="Purticles"]
+rotation = -2.0944
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D14" type="CPUParticles2D" parent="Purticles"]
+rotation = -2.26893
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D15" type="CPUParticles2D" parent="Purticles"]
+rotation = -2.44346
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D16" type="CPUParticles2D" parent="Purticles"]
+rotation = -2.61799
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D17" type="CPUParticles2D" parent="Purticles"]
+rotation = -2.79253
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D18" type="CPUParticles2D" parent="Purticles"]
+rotation = -2.96706
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D19" type="CPUParticles2D" parent="Purticles"]
+rotation = -3.14159
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D20" type="CPUParticles2D" parent="Purticles"]
+rotation = -3.31613
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D21" type="CPUParticles2D" parent="Purticles"]
+rotation = -3.49066
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D22" type="CPUParticles2D" parent="Purticles"]
+rotation = -3.66519
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D23" type="CPUParticles2D" parent="Purticles"]
+rotation = -3.83972
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D24" type="CPUParticles2D" parent="Purticles"]
+rotation = -4.01426
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D25" type="CPUParticles2D" parent="Purticles"]
+rotation = -4.18879
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D26" type="CPUParticles2D" parent="Purticles"]
+rotation = -4.36332
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D27" type="CPUParticles2D" parent="Purticles"]
+rotation = -4.53786
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D28" type="CPUParticles2D" parent="Purticles"]
+rotation = -4.71239
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D29" type="CPUParticles2D" parent="Purticles"]
+rotation = -4.88692
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D30" type="CPUParticles2D" parent="Purticles"]
+rotation = -5.06145
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D31" type="CPUParticles2D" parent="Purticles"]
+rotation = -5.23599
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D32" type="CPUParticles2D" parent="Purticles"]
+rotation = -5.41052
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D33" type="CPUParticles2D" parent="Purticles"]
+rotation = -5.58505
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D34" type="CPUParticles2D" parent="Purticles"]
+rotation = -5.75959
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D35" type="CPUParticles2D" parent="Purticles"]
+rotation = -5.93412
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D36" type="CPUParticles2D" parent="Purticles"]
+rotation = -6.10865
+amount = 50
+lifetime = 100.0
+texture = ExtResource( 39 )
+direction = Vector2( 500, 500 )
+spread = 90.0
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+scale_amount = 1.5
+scale_amount_random = 1.0
+color = Color( 1, 0, 0, 0.196078 )
+hue_variation = 0.35
+hue_variation_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Game" type="Node2D" parent="."]
+position = Vector2( 300, 300 )
+rotation = 4.46638e-06
+scale = Vector2( 0.14, 0.14 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Line0" type="Node2D" parent="Game"]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="light_bulb" type="Sprite" parent="Game/Line0"]
+texture = ExtResource( 11 )
+
+[node name="Line1" type="Node2D" parent="Game"]
+scale = Vector2( -1, 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="light_bulb_0" type="Sprite" parent="Game/Line1"]
+position = Vector2( -18, -396 )
+texture = ExtResource( 13 )
+
+[node name="light_bulb_1" type="Sprite" parent="Game/Line1"]
+position = Vector2( 351, -180 )
+texture = ExtResource( 2 )
+
+[node name="light_bulb_2" type="Sprite" parent="Game/Line1"]
+position = Vector2( 333, 198 )
+texture = ExtResource( 31 )
+
+[node name="light_bulb_3" type="Sprite" parent="Game/Line1"]
+position = Vector2( 0, 369 )
+texture = ExtResource( 29 )
+
+[node name="light_bulb_4" type="Sprite" parent="Game/Line1"]
+position = Vector2( -342, 171 )
+texture = ExtResource( 33 )
+
+[node name="light_bulb_5" type="Sprite" parent="Game/Line1"]
+position = Vector2( -342, -162 )
+texture = ExtResource( 7 )
+
+[node name="Line2" type="Node2D" parent="Game"]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="light_bulb_0" type="Sprite" parent="Game/Line2"]
+position = Vector2( 0, -783 )
+texture = ExtResource( 3 )
+
+[node name="light_bulb_1" type="Sprite" parent="Game/Line2"]
+position = Vector2( 414, -657 )
+texture = ExtResource( 23 )
+
+[node name="light_bulb_2" type="Sprite" parent="Game/Line2"]
+position = Vector2( 693, -360 )
+texture = ExtResource( 17 )
+
+[node name="light_bulb_3" type="Sprite" parent="Game/Line2"]
+position = Vector2( 783, 0 )
+texture = ExtResource( 26 )
+
+[node name="light_bulb_4" type="Sprite" parent="Game/Line2"]
+position = Vector2( 675, 351 )
+texture = ExtResource( 28 )
+
+[node name="light_bulb_5" type="Sprite" parent="Game/Line2"]
+position = Vector2( 414, 648 )
+texture = ExtResource( 24 )
+
+[node name="light_bulb_6" type="Sprite" parent="Game/Line2"]
+position = Vector2( 18, 774 )
+texture = ExtResource( 4 )
+
+[node name="light_bulb_7" type="Sprite" parent="Game/Line2"]
+position = Vector2( -378, 702 )
+texture = ExtResource( 5 )
+
+[node name="light_bulb_8" type="Sprite" parent="Game/Line2"]
+position = Vector2( -648, 405 )
+texture = ExtResource( 6 )
+
+[node name="light_bulb_9" type="Sprite" parent="Game/Line2"]
+position = Vector2( -783, 0 )
+texture = ExtResource( 10 )
+
+[node name="light_bulb_10" type="Sprite" parent="Game/Line2"]
+position = Vector2( -702, -378 )
+texture = ExtResource( 34 )
+
+[node name="light_bulb_11" type="Sprite" parent="Game/Line2"]
+position = Vector2( -405, -648 )
+texture = ExtResource( 15 )
+
+[node name="Line3" type="Node2D" parent="Game"]
+scale = Vector2( -1, 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="light_bulb_0" type="Sprite" parent="Game/Line3"]
+position = Vector2( -18, -1134 )
+texture = ExtResource( 21 )
+
+[node name="light_bulb_1" type="Sprite" parent="Game/Line3"]
+position = Vector2( 396, -1071 )
+texture = ExtResource( 8 )
+
+[node name="light_bulb_2" type="Sprite" parent="Game/Line3"]
+position = Vector2( 747, -873 )
+texture = ExtResource( 25 )
+
+[node name="light_bulb_3" type="Sprite" parent="Game/Line3"]
+position = Vector2( 1008, -576 )
+texture = ExtResource( 37 )
+
+[node name="light_bulb_4" type="Sprite" parent="Game/Line3"]
+position = Vector2( 1125, -180 )
+texture = ExtResource( 27 )
+
+[node name="light_bulb_5" type="Sprite" parent="Game/Line3"]
+position = Vector2( 1107, 198 )
+texture = ExtResource( 30 )
+
+[node name="light_bulb_6" type="Sprite" parent="Game/Line3"]
+position = Vector2( 1026, 549 )
+texture = ExtResource( 36 )
+
+[node name="light_bulb_7" type="Sprite" parent="Game/Line3"]
+position = Vector2( 765, 855 )
+z_index = -1
+texture = ExtResource( 9 )
+
+[node name="light_bulb_8" type="Sprite" parent="Game/Line3"]
+position = Vector2( 432, 1053 )
+texture = ExtResource( 12 )
+
+[node name="light_bulb_9" type="Sprite" parent="Game/Line3"]
+position = Vector2( 36, 1161 )
+texture = ExtResource( 14 )
+
+[node name="light_bulb_10" type="Sprite" parent="Game/Line3"]
+position = Vector2( -378, 1071 )
+texture = ExtResource( 16 )
+
+[node name="light_bulb_11" type="Sprite" parent="Game/Line3"]
+position = Vector2( -756, 864 )
+texture = ExtResource( 22 )
+
+[node name="light_bulb_12" type="Sprite" parent="Game/Line3"]
+position = Vector2( -1008, 495 )
+texture = ExtResource( 35 )
+
+[node name="light_bulb_13" type="Sprite" parent="Game/Line3"]
+position = Vector2( -1134, 135 )
+texture = ExtResource( 38 )
+
+[node name="light_bulb_14" type="Sprite" parent="Game/Line3"]
+position = Vector2( -1134, -243 )
+texture = ExtResource( 18 )
+
+[node name="light_bulb_15" type="Sprite" parent="Game/Line3"]
+position = Vector2( -1035, -594 )
+texture = ExtResource( 19 )
+
+[node name="light_bulb_16" type="Sprite" parent="Game/Line3"]
+position = Vector2( -738, -864 )
+z_index = -1
+texture = ExtResource( 32 )
+
+[node name="light_bulb_17" type="Sprite" parent="Game/Line3"]
+position = Vector2( -414, -1071 )
+z_index = -1
+texture = ExtResource( 20 )
+
+[node name="PlayerInput" type="Node2D" parent="."]
+position = Vector2( 300, 300 )
+scale = Vector2( 0.14, 0.14 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Line0" type="TouchScreenButton" parent="PlayerInput"]
+z_index = 4
+shape = SubResource( 6 )
+shape_centered = false
+passby_press = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Line1" type="TouchScreenButton" parent="PlayerInput"]
+z_index = 3
+shape = SubResource( 7 )
+shape_centered = false
+passby_press = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Line2" type="TouchScreenButton" parent="PlayerInput"]
+z_index = 2
+shape = SubResource( 8 )
+shape_centered = false
+passby_press = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Line3" type="TouchScreenButton" parent="PlayerInput"]
+z_index = 1
+shape = SubResource( 9 )
+shape_centered = false
+passby_press = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Texts" type="Node2D" parent="."]
+scale = Vector2( 0.14, 0.14 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="az_nimatron_says" type="Sprite" parent="Texts"]
+position = Vector2( 1638, 396 )
+texture = ExtResource( 41 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="who_extenguishes" type="Sprite" parent="Texts"]
+position = Vector2( 387, 2088 )
+rotation = -1.5708
+texture = ExtResource( 40 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="the_last_light_wins" type="Sprite" parent="Texts"]
+position = Vector2( 1674, 3915 )
+texture = ExtResource( 42 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Submit" type="AnimatedSprite" parent="."]
+position = Vector2( 517.5, 491.25 )
+rotation = -0.349066
+scale = Vector2( 0.14, 0.14 )
+frames = SubResource( 5 )
+animation = "Red"
+script = ExtResource( 45 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Button" type="TouchScreenButton" parent="Submit"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -479.679, -185.186 )
+scale = Vector2( 0.849168, 0.776203 )
+normal = ExtResource( 44 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 300, 300 )
+current = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CircleInput" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 110.0
+margin_top = 110.0
+margin_right = -110.0
+margin_bottom = -110.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="P3" type="Position2D" parent="CircleInput"]
+position = Vector2( 380, 190 )
+
+[node name="P2" type="Position2D" parent="CircleInput"]
+position = Vector2( 322.3, 190 )
+
+[node name="P1" type="Position2D" parent="CircleInput"]
+position = Vector2( 273.5, 190 )
+
+[node name="P0" type="Position2D" parent="CircleInput"]
+position = Vector2( 220, 190 )
+
+[connection signal="gui_input" from="CircleInput" to="." method="_on_CircleInput_gui_input" flags=3]
