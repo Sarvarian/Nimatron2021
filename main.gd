@@ -12,19 +12,20 @@ func _on_CircleInput_gui_input(event : InputEvent) -> void:
 		player_circle_input(event.position + $CircleInput.rect_position)
 
 
-func _on_SubmitButton_released() -> void:
-	var button : TouchScreenButton = $Submit/SubmitButton as TouchScreenButton
-	var mouse_pos : Vector2 = button.get_local_mouse_position()
-	if mouse_pos.x < 0 or mouse_pos.y < 0 or mouse_pos.x > button.position.x or mouse_pos.y > button.y:
-		print("out")
-	else:
-		print("in")
+func _on_SubmitButton_pressed() -> void:
+	this_turn_lights.clear()
+	$CircleInput.visible = false
+	$Submit.go_red()
 
 
 func player_circle_input(mouse_pos: Vector2) -> void:
 	var line_idx : int = player_circle_input_check(mouse_pos)
 	if line_idx > -1:
 		extinguish(line_idx)
+	if this_turn_lights:
+		$Submit.go_green()
+	else:
+		$Submit.go_red()
 
 
 func player_circle_input_check(mouse_pos : Vector2) -> int:

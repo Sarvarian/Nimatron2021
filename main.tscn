@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://z1939_nimatron/assets/art/light_yellow/light_yellow_1.tres" type="Texture" id=2]
@@ -58,6 +58,16 @@ animations = [ {
 "name": "Green",
 "speed": 0.0
 } ]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
@@ -1061,14 +1071,20 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="SubmitButton" type="TouchScreenButton" parent="Submit"]
-modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -479.679, -185.186 )
-scale = Vector2( 0.849168, 0.776203 )
-normal = ExtResource( 44 )
-shape_visible = false
+[node name="SubmitButton" type="Button" parent="Submit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -540.0
+margin_top = -202.5
+margin_right = -540.0
+margin_bottom = -202.5
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
 __meta__ = {
-"_edit_lock_": true
+"_edit_use_anchors_": false
 }
 
 [node name="Texts" type="Node2D" parent="."]
@@ -1108,4 +1124,6 @@ __meta__ = {
 }
 
 [connection signal="gui_input" from="CircleInput" to="." method="_on_CircleInput_gui_input" flags=3]
-[connection signal="released" from="Submit/SubmitButton" to="." method="_on_SubmitButton_released" flags=3]
+[connection signal="button_down" from="Submit/SubmitButton" to="Submit" method="down" flags=3]
+[connection signal="button_up" from="Submit/SubmitButton" to="Submit" method="up"]
+[connection signal="pressed" from="Submit/SubmitButton" to="." method="_on_SubmitButton_pressed" flags=3]
