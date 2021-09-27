@@ -11,6 +11,38 @@ var previous_line : int = 0
 func _ready() -> void:
 	rng.randomize()
 #	$Stars/AnimationPlayer.play("Initiate")
+	VisualServer.set_default_clear_color(Color(.0, .0, .0, .0))
+	var err : int = 0
+	err = get_tree().root.connect("size_changed", self, "_size_changed", [], CONNECT_DEFERRED)
+	if err:
+		printerr("ERROR! ", err)
+	_size_changed()
+	$Panel.visible = get_tree().get_root().transparent_bg
+
+
+func _input(event : InputEvent) -> void:
+	if event.is_action_released("fullscreen"):
+		OS.window_fullscreen = not OS.window_fullscreen
+		
+	elif event.is_action_released("borderless"):
+		OS.window_borderless = not OS.window_borderless
+		
+	elif event.is_action_released("transparent"):
+		var new_state : bool = not get_tree().get_root().transparent_bg
+		get_tree().get_root().transparent_bg = new_state
+		$Panel.visible = new_state
+		
+	elif event.is_action_released("quit"):
+		get_tree().quit(0)
+
+
+
+func _size_changed() -> void:
+	var viewport : Viewport = get_tree().root as Viewport
+	var panel : Panel = $Panel as Panel
+	
+	panel.rect_position = -viewport.size
+	panel.rect_size = viewport.size * 2
 
 
 func _on_CircleInput_gui_input(event : InputEvent) -> void:
