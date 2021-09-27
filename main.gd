@@ -10,6 +10,7 @@ var previous_line : int = 0
 
 func _ready() -> void:
 	rng.randomize()
+#	$Stars/AnimationPlayer.play("Initiate")
 
 
 func _on_CircleInput_gui_input(event : InputEvent) -> void:
@@ -21,6 +22,7 @@ func _on_SubmitButton_pressed() -> void:
 	this_turn_lights.clear()
 	$CircleInput.visible = false
 	$Submit.go_red()
+	ai_turn()
 
 
 func player_circle_input(mouse_pos: Vector2) -> void:
@@ -44,9 +46,35 @@ func player_circle_input_check(mouse_pos : Vector2) -> int:
 	return -1
 
 
+func ai_turn() -> void:
+	# Initial data.
+	var heaps : PoolByteArray = get_heaps()
+	var my_move : PoolByteArray = Nim.play(heaps, rng)
+	var moves_left : int = Nim.moves_left(heaps)
+	var time : float = rng.randf_range(moves_left-1, moves_left)
+	# Thinking animation.
+	var anim_player : AnimationPlayer = $Stars/AnimationPlayer
+	anim_player.get_animation("Thinking").loop = true
+	anim_player.play("Thinking")
+	yield(get_tree().create_timer(time, false), "timeout")
+	anim_player.get_animation("Thinking").loop = false
+	var err : int = 0
+	err = anim_player.connect("animation_finished", self,"ai_move", [my_move], CONNECT_DEFERRED | CONNECT_ONESHOT)
+	if err:
+		printerr("ERROR! ", err)
+
+
+func ai_move(_anim_name : String, move: PoolByteArray) -> void:
+	for _i in range(move[1]):
+		yield(get_tree().create_timer(.7, false), "timeout")
+		extinguish(move[0])
+	this_turn_lights.clear()
+	$CircleInput.visible = true
+
+
 func extinguish(line_idx : int) -> void:
 	if previous_line != line_idx:
-		light_on_line(previous_line)
+		this_turn_lights_back_on()
 		previous_line = line_idx
 		this_turn_lights.clear()
 	
@@ -57,10 +85,30 @@ func extinguish(line_idx : int) -> void:
 			this_turn_lights.append(l)
 			return
 	
-	light_on_line(line_idx)
+	this_turn_lights_back_on()
 	this_turn_lights.clear()
 
 
-func light_on_line(line_idx : int) -> void:
-	for light_bulb in $Game.get_child(line_idx).get_children():
+func this_turn_lights_back_on() -> void:
+	for light_bulb in this_turn_lights:
 		(light_bulb as Sprite).modulate.a = 1
+
+
+func get_heaps() -> PoolByteArray:
+	var heaps : PoolByteArray = [0, 0, 0, 0]
+	
+	for line_idx in range(4):
+		var line_node : Node = $Game.get_child(line_idx) as Node
+		for light_bulb in line_node.get_children():
+			if (light_bulb as Sprite).modulate.a == 1:
+				heaps[line_idx] += 1
+	
+	return heaps
+
+
+
+
+
+
+
+

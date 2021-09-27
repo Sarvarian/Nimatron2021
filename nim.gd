@@ -4,10 +4,11 @@ extends Object
 
 static func play(
 	heaps : PoolByteArray,
+	rng : RandomNumberGenerator,
 	misere : bool = false
 	) -> PoolByteArray:
 	
-	if not heaps:
+	if not heaps or is_heaps_empty(heaps):
 		return PoolByteArray([0, 0])
 	
 	var is_endgame : bool = false
@@ -31,8 +32,13 @@ static func play(
 	
 	var nim_sum : int = nim_sum(heaps)
 	
-	#if nim_sum == 0:
-	#	return "You will lose :("
+	if nim_sum == 0:
+		var res : int
+		while true:
+			res = rng.randi_range(0, heaps.size() - 1)
+			if heaps[res] > 0:
+				return PoolByteArray([res, 1])
+#		return "You will lose :("
 	
 	for i in heaps.size():
 		var target_size : int = heaps[i] ^ nim_sum
@@ -44,9 +50,6 @@ static func play(
 		if heaps[i] > 0:
 			return PoolByteArray([i, 1])
 	
-#	var random_move : PoolByteArray = produse_random_move(heaps)
-#	if random_move[1] != 1:
-#		return random_move
 	
 	return PoolByteArray([0, 0])
 
@@ -102,8 +105,16 @@ static func nim_sum(
 	return sum
 
 
+static func is_heaps_empty(heaps : PoolByteArray) -> bool:
+	for h in heaps:
+		if h > 0:
+			return false
+	return true
+
+
 #static func produse_random_move(
-#	heaps : PoolByteArray
+#	heaps : PoolByteArray,
+#	rng : RandomNumberGenerator
 #	) -> PoolByteArray:
 #
 #	var move : PoolByteArray = [0, 0]
@@ -112,7 +123,7 @@ static func nim_sum(
 #	for h in heaps:
 #		count += h
 #
-#	var rand_num : int = RNG.rng.randi_range(0, count)
+#	var rand_num : int = rng.randi_range(0, count)
 #
 #	return move
 
