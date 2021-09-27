@@ -1,5 +1,5 @@
 class_name Nim
-extends Static
+extends Object
 
 
 static func play(

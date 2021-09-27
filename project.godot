@@ -10,30 +10,18 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node",
-"class": "Builder",
-"language": "GDScript",
-"path": "res://builder.gd"
-}, {
-"base": "Node",
 "class": "Main",
 "language": "GDScript",
 "path": "res://main.gd"
 }, {
-"base": "Static",
+"base": "Reference",
 "class": "Nim",
 "language": "GDScript",
-"path": "res://aban/statics/nim.gd"
-}, {
-"base": "Object",
-"class": "Static",
-"language": "GDScript",
-"path": "res://aban/statics/static.gd"
+"path": "res://nim.gd"
 } ]
 _global_script_class_icons={
-"Builder": "",
 "Main": "",
-"Nim": "",
-"Static": ""
+"Nim": ""
 }
 
 [application]

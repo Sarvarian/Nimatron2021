@@ -2,9 +2,14 @@ class_name Main
 extends Node
 
 
+var rng : RandomNumberGenerator = RandomNumberGenerator.new()
 var line_buttons_state : PoolByteArray = [false, false, false, false]
 var this_turn_lights : Array = []
 var previous_line : int = 0
+
+
+func _ready() -> void:
+	rng.randomize()
 
 
 func _on_CircleInput_gui_input(event : InputEvent) -> void:
