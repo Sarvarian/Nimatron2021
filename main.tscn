@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://z1939_nimatron/assets/art/light_yellow/light_yellow_1.tres" type="Texture" id=2]
@@ -45,18 +45,6 @@
 [ext_resource path="res://z1939_nimatron/assets/art/submit_button/submit_button_green.tres" type="Texture" id=43]
 [ext_resource path="res://z1939_nimatron/assets/art/submit_button/submit_button_red.tres" type="Texture" id=44]
 [ext_resource path="res://z1939_nimatron/scripts/submit_button.gd" type="Script" id=45]
-
-[sub_resource type="CircleShape2D" id=6]
-radius = 216.0
-
-[sub_resource type="CircleShape2D" id=7]
-radius = 596.5
-
-[sub_resource type="CircleShape2D" id=8]
-radius = 945.0
-
-[sub_resource type="CircleShape2D" id=9]
-radius = 1350.5
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
@@ -1022,46 +1010,63 @@ position = Vector2( -414, -1071 )
 z_index = -1
 texture = ExtResource( 20 )
 
-[node name="PlayerInput" type="Node2D" parent="."]
-position = Vector2( 300, 300 )
+[node name="CircleInput" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 110.0
+margin_top = 110.0
+margin_right = -110.0
+margin_bottom = -110.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="P0" type="Position2D" parent="CircleInput"]
+position = Vector2( 220, 190 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="P1" type="Position2D" parent="CircleInput"]
+position = Vector2( 273.5, 190 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="P2" type="Position2D" parent="CircleInput"]
+position = Vector2( 322.3, 190 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="P3" type="Position2D" parent="CircleInput"]
+position = Vector2( 380, 190 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Submit" type="AnimatedSprite" parent="."]
+position = Vector2( 517.5, 491.25 )
+rotation = -0.349066
 scale = Vector2( 0.14, 0.14 )
+frames = SubResource( 5 )
+animation = "Red"
+script = ExtResource( 45 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
 
-[node name="Line0" type="TouchScreenButton" parent="PlayerInput"]
-z_index = 4
-shape = SubResource( 6 )
-shape_centered = false
-passby_press = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Line1" type="TouchScreenButton" parent="PlayerInput"]
-z_index = 3
-shape = SubResource( 7 )
-shape_centered = false
-passby_press = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Line2" type="TouchScreenButton" parent="PlayerInput"]
-z_index = 2
-shape = SubResource( 8 )
-shape_centered = false
-passby_press = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Line3" type="TouchScreenButton" parent="PlayerInput"]
-z_index = 1
-shape = SubResource( 9 )
-shape_centered = false
-passby_press = true
+[node name="SubmitButton" type="TouchScreenButton" parent="Submit"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -479.679, -185.186 )
+scale = Vector2( 0.849168, 0.776203 )
+normal = ExtResource( 44 )
+shape_visible = false
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1095,27 +1100,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Submit" type="AnimatedSprite" parent="."]
-position = Vector2( 517.5, 491.25 )
-rotation = -0.349066
-scale = Vector2( 0.14, 0.14 )
-frames = SubResource( 5 )
-animation = "Red"
-script = ExtResource( 45 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
-
-[node name="Button" type="TouchScreenButton" parent="Submit"]
-modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -479.679, -185.186 )
-scale = Vector2( 0.849168, 0.776203 )
-normal = ExtResource( 44 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 300, 300 )
 current = true
@@ -1123,29 +1107,5 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CircleInput" type="Control" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 110.0
-margin_top = 110.0
-margin_right = -110.0
-margin_bottom = -110.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="P3" type="Position2D" parent="CircleInput"]
-position = Vector2( 380, 190 )
-
-[node name="P2" type="Position2D" parent="CircleInput"]
-position = Vector2( 322.3, 190 )
-
-[node name="P1" type="Position2D" parent="CircleInput"]
-position = Vector2( 273.5, 190 )
-
-[node name="P0" type="Position2D" parent="CircleInput"]
-position = Vector2( 220, 190 )
-
 [connection signal="gui_input" from="CircleInput" to="." method="_on_CircleInput_gui_input" flags=3]
+[connection signal="released" from="Submit/SubmitButton" to="." method="_on_SubmitButton_released" flags=3]

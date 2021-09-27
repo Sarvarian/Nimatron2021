@@ -24,11 +24,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://aban/statics/nim.gd"
 }, {
-"base": "Reference",
-"class": "Player",
-"language": "GDScript",
-"path": "res://systems/player.gd"
-}, {
 "base": "Object",
 "class": "Static",
 "language": "GDScript",
@@ -38,7 +33,6 @@ _global_script_class_icons={
 "Builder": "",
 "Main": "",
 "Nim": "",
-"Player": "",
 "Static": ""
 }
 
