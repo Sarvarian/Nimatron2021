@@ -1,18 +1,21 @@
 extends AnimatedSprite
 
 
+var is_green : bool
+
+
 func _ready() -> void:
 	go_red()
 #
 
 func go_red() -> void:
 	play("Red")
-	$SubmitButton.disabled = true
+	is_green = false
 #
 
 func go_green() -> void:
 	play("Green")
-	$SubmitButton.disabled = false
+	is_green = true
 #
 
 func down() -> void:

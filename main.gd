@@ -6,6 +6,8 @@ var rng : RandomNumberGenerator = RandomNumberGenerator.new()
 var line_buttons_state : PoolByteArray = [false, false, false, false]
 var this_turn_lights : Array = []
 var previous_line : int = 0
+var anim_name : String = ""
+var anim_pos : float = .0
 
 
 func _ready() -> void:
@@ -23,18 +25,89 @@ func _ready() -> void:
 func _input(event : InputEvent) -> void:
 	if event.is_action_released("fullscreen"):
 		OS.window_fullscreen = not OS.window_fullscreen
+		return
 		
 	elif event.is_action_released("borderless"):
 		OS.window_borderless = not OS.window_borderless
+		return
 		
 	elif event.is_action_released("transparent"):
 		var new_state : bool = not get_tree().get_root().transparent_bg
 		get_tree().get_root().transparent_bg = new_state
 		$Panel.visible = new_state
+		return
+		
+	elif event.is_action_pressed("add"):
+		var new_val : float = $Panel.modulate.a + .05
+		$Panel.modulate.a = clamp(new_val, 0, 1)
+		return
+		
+	elif event.is_action_pressed("sub"):
+		var new_val : float = $Panel.modulate.a - .05
+		$Panel.modulate.a = clamp(new_val, 0, 1)
+		return
+		
+	elif event.is_action_pressed("hue_shift_left"):
+		var new_val : float = $Panel.modulate.h + .05
+		if new_val > 1:
+			new_val -= 1
+		elif new_val < 0:
+			new_val += 1
+		$Panel.modulate.h = new_val
+		return
+		
+	elif event.is_action_pressed("hue_shift_right"):
+		var new_val : float = $Panel.modulate.h - .05
+		if new_val > 1:
+			new_val -= 1
+		elif new_val < 0:
+			new_val += 1
+		$Panel.modulate.h = new_val
+		return
+		
+	elif event.is_action_pressed("value_high"):
+		var new_val : float = $Panel.modulate.v + .05
+		$Panel.modulate.v = clamp(new_val, 0, 1)
+		return
+		
+	elif event.is_action_pressed("value_low"):
+		var new_val : float = $Panel.modulate.v - .05
+		$Panel.modulate.v = clamp(new_val, 0, 1)
+		return
+		
+	elif event.is_action_pressed("saturation_more"):
+		var new_val : float = $Panel.modulate.s + .05
+		$Panel.modulate.s = clamp(new_val, 0, 1)
+		return
+		
+	elif event.is_action_pressed("saturation_less"):
+		var new_val : float = $Panel.modulate.s - .05
+		$Panel.modulate.s = clamp(new_val, 0, 1)
+		return
 		
 	elif event.is_action_released("quit"):
 		get_tree().quit(0)
-
+		return
+		
+	elif event.is_action_released("one"):
+		player_direct_input(0)
+		return
+		
+	elif event.is_action_released("two"):
+		player_direct_input(1)
+		return
+		
+	elif event.is_action_released("three"):
+		player_direct_input(2)
+		return
+		
+	elif event.is_action_released("four"):
+		player_direct_input(3)
+		return
+		
+	elif event.is_action_released("submit"):
+		_on_SubmitButton_pressed()
+		return
 
 
 func _size_changed() -> void:
@@ -45,16 +118,54 @@ func _size_changed() -> void:
 	panel.rect_size = viewport.size * 2
 
 
+func _on_SubmitButton_button_down() -> void:
+	var anim_player : AnimationPlayer = $Stars/AnimationPlayer
+	anim_name = anim_player.current_animation
+	if anim_name:
+		anim_pos = anim_player.current_animation_position
+	else:
+		anim_pos = .0
+	anim_player.stop(false)
+	var err : int = 0
+	err =  anim_player.connect("animation_finished", self, "restart_the_game", [], CONNECT_DEFERRED | CONNECT_ONESHOT)
+	if err:
+		printerr("ERROR! ", err)
+	anim_player.play("Charging")
+
+
+func _on_SubmitButton_button_up() -> void:
+	var anim_player : AnimationPlayer = $Stars/AnimationPlayer
+	if anim_player.current_animation == "Charging":
+		anim_player.stop(true)
+		anim_player.play("Off")
+		anim_player.seek(.0)
+		if anim_name:
+			anim_player.play(anim_name)
+			anim_player.seek(anim_pos)
+	anim_player.disconnect("animation_finished", self, "restart_the_game")
+	print("up")
+
+
+func _on_SubmitButton_pressed() -> void:
+	if $Submit.is_green:
+		this_turn_lights.clear()
+		$CircleInput.visible = false
+		$Submit.go_red()
+		ai_turn()
+	print("sub")
+
+
 func _on_CircleInput_gui_input(event : InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		player_circle_input(event.position + $CircleInput.rect_position)
 
 
-func _on_SubmitButton_pressed() -> void:
-	this_turn_lights.clear()
-	$CircleInput.visible = false
-	$Submit.go_red()
-	ai_turn()
+func player_direct_input(line_idx : int) -> void:
+	extinguish(line_idx)
+	if this_turn_lights:
+		$Submit.go_green()
+	else:
+		$Submit.go_red()
 
 
 func player_circle_input(mouse_pos: Vector2) -> void:
@@ -136,6 +247,12 @@ func get_heaps() -> PoolByteArray:
 				heaps[line_idx] += 1
 	
 	return heaps
+
+
+func restart_the_game(_anim_name : String = "") -> void:
+	var err : int = get_tree().reload_current_scene()
+	if err:
+		printerr("ERROR! ", err)
 
 
 
