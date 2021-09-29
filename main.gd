@@ -12,7 +12,6 @@ var anim_pos : float = .0
 
 func _ready() -> void:
 	rng.randomize()
-#	$Stars/AnimationPlayer.play("Initiate")
 	VisualServer.set_default_clear_color(Color(.0, .0, .0, .0))
 	var err : int = 0
 	err = get_tree().root.connect("size_changed", self, "_size_changed", [], CONNECT_DEFERRED)
@@ -143,7 +142,6 @@ func _on_SubmitButton_button_up() -> void:
 			anim_player.play(anim_name)
 			anim_player.seek(anim_pos)
 	anim_player.disconnect("animation_finished", self, "restart_the_game")
-	print("up")
 
 
 func _on_SubmitButton_pressed() -> void:
@@ -152,7 +150,6 @@ func _on_SubmitButton_pressed() -> void:
 		$CircleInput.visible = false
 		$Submit.go_red()
 		ai_turn()
-	print("sub")
 
 
 func _on_CircleInput_gui_input(event : InputEvent) -> void:
@@ -224,7 +221,8 @@ func extinguish(line_idx : int) -> void:
 	for light_bulb in $Game.get_child(line_idx).get_children():
 		var l : Sprite = (light_bulb as Sprite)
 		if l.modulate.a == 1:
-			l.modulate.a = .2
+#			l.modulate.a = .2
+			extinguish_anim(line_idx, l.name)
 			this_turn_lights.append(l)
 			return
 	
@@ -255,7 +253,13 @@ func restart_the_game(_anim_name : String = "") -> void:
 		printerr("ERROR! ", err)
 
 
-
+onready var extin_anim_player : AnimationPlayer = $ExtinguishAnimationPlayer
+onready var extin_anim : Animation = extin_anim_player.get_animation("Anim")
+func extinguish_anim(line_idx : int, light_bulb_name : String) -> void:
+	var path : String = "Game/Line{}/{}:modulate".format(
+		[line_idx, light_bulb_name], "{}")
+	extin_anim.track_set_path(0, path)
+	extin_anim_player.play("Anim")
 
 
 

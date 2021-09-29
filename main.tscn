@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://z1939_nimatron/assets/art/light_yellow/light_yellow_1.tres" type="Texture" id=2]
@@ -217,40 +217,40 @@ tracks/2/keys = {
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ ExtResource( 48 ) ],
-"loop": false,
-"name": "Off",
-"speed": 0.0
-}, {
 "frames": [ ExtResource( 49 ) ],
 "loop": false,
 "name": "On",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 48 ) ],
+"loop": false,
+"name": "Off",
 "speed": 0.0
 } ]
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ ExtResource( 50 ) ],
-"loop": false,
-"name": "Off",
-"speed": 0.0
-}, {
 "frames": [ ExtResource( 51 ) ],
 "loop": false,
 "name": "On",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 50 ) ],
+"loop": false,
+"name": "Off",
 "speed": 0.0
 } ]
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ ExtResource( 47 ) ],
-"loop": false,
-"name": "Off",
-"speed": 0.0
-}, {
 "frames": [ ExtResource( 46 ) ],
 "loop": false,
 "name": "On",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 47 ) ],
+"loop": false,
+"name": "Off",
 "speed": 0.0
 } ]
 
@@ -276,6 +276,38 @@ animations = [ {
 [sub_resource type="StyleBoxEmpty" id=13]
 
 [sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="Animation" id=15]
+resource_name = "Anim"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Game/Line3/light_bulb_0:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 3,
+"values": [ Color( 1, 1, 1, 0.2 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "Set"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Game/Line3/light_bulb_0:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
@@ -1374,9 +1406,13 @@ stream = ExtResource( 52 )
 autoplay = true
 mix_target = 1
 
+[node name="ExtinguishAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Anim = SubResource( 15 )
+anims/Set = SubResource( 16 )
+
 [connection signal="gui_input" from="CircleInput" to="." method="_on_CircleInput_gui_input" flags=3]
-[connection signal="button_down" from="Submit/SubmitButton" to="Submit" method="down" flags=3]
 [connection signal="button_down" from="Submit/SubmitButton" to="." method="_on_SubmitButton_button_down" flags=3]
-[connection signal="button_up" from="Submit/SubmitButton" to="Submit" method="up"]
+[connection signal="button_down" from="Submit/SubmitButton" to="Submit" method="down" flags=3]
 [connection signal="button_up" from="Submit/SubmitButton" to="." method="_on_SubmitButton_button_up" flags=3]
+[connection signal="button_up" from="Submit/SubmitButton" to="Submit" method="up"]
 [connection signal="pressed" from="Submit/SubmitButton" to="." method="_on_SubmitButton_pressed" flags=3]
