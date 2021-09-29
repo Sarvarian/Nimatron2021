@@ -4,7 +4,7 @@
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.16156, 0.252159, 1 )
-colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.2, 1, 1, 1, 0.5, 1, 1, 1, 1 )
+colors = PoolColorArray( 1, 0, 0, 0, 1, 0, 0, 0.2, 1, 0, 0, 0.5, 1, 0, 0, 1 )
 
 [node name="Particles2DRoot" type="Node2D"]
 __meta__ = {
