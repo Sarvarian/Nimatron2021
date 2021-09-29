@@ -8,6 +8,20 @@ var this_turn_lights : Array = []
 var previous_line : int = 0
 var anim_name : String = ""
 var anim_pos : float = .0
+var anim_light_queue : Array = [[], [], [], []]
+
+onready var line_anim_players : Array = [
+	$LineAnimationPlayer1,
+	$LineAnimationPlayer2,
+	$LineAnimationPlayer3,
+	$LineAnimationPlayer4,
+]
+onready var line_anims : Array = [
+	line_anim_players[0].get_animation("Anim"),
+	line_anim_players[1].get_animation("Anim"),
+	line_anim_players[2].get_animation("Anim"),
+	line_anim_players[3].get_animation("Anim"),
+]
 
 
 func _ready() -> void:
@@ -222,7 +236,7 @@ func extinguish(line_idx : int) -> void:
 		var l : Sprite = (light_bulb as Sprite)
 		if l.modulate.a == 1:
 #			l.modulate.a = .2
-			extinguish_anim(line_idx, l.name)
+			anim_add_light_bulb(line_idx, l, true)
 			this_turn_lights.append(l)
 			return
 	
@@ -231,19 +245,23 @@ func extinguish(line_idx : int) -> void:
 
 
 func this_turn_lights_back_on() -> void:
-	for light_bulb in this_turn_lights:
-		(light_bulb as Sprite).modulate.a = 1
+	var light_bulb := this_turn_lights.pop_back() as Node
+	while light_bulb:
+		anim_add_light_bulb(
+			light_bulb.get_parent().get_index(),
+			light_bulb,
+			false
+			)
+		light_bulb = this_turn_lights.pop_back() as Node
 
 
 func get_heaps() -> PoolByteArray:
 	var heaps : PoolByteArray = [0, 0, 0, 0]
-	
 	for line_idx in range(4):
 		var line_node : Node = $Game.get_child(line_idx) as Node
 		for light_bulb in line_node.get_children():
 			if (light_bulb as Sprite).modulate.a == 1:
 				heaps[line_idx] += 1
-	
 	return heaps
 
 
@@ -253,13 +271,48 @@ func restart_the_game(_anim_name : String = "") -> void:
 		printerr("ERROR! ", err)
 
 
-onready var extin_anim_player : AnimationPlayer = $ExtinguishAnimationPlayer
-onready var extin_anim : Animation = extin_anim_player.get_animation("Anim")
-func extinguish_anim(line_idx : int, light_bulb_name : String) -> void:
-	var path : String = "Game/Line{}/{}:modulate".format(
-		[line_idx, light_bulb_name], "{}")
-	extin_anim.track_set_path(0, path)
-	extin_anim_player.play("Anim")
+func anim_add_light_bulb(line_idx : int, light_bulb : Node, on : bool) -> void:
+	var player := line_anim_players[line_idx] as AnimationPlayer
+	var path := "Game/Line{}/{}:modulate".format(
+		[line_idx, light_bulb.name], "{}")
+	anim_light_queue[line_idx].append([on, path])
+	if not player.is_playing():
+		_on_LineAnimation_animation_finished("", line_idx)
+
+
+func _on_LineAnimation_animation_finished(_anim_name, line_idx):
+	var data = anim_light_queue[line_idx].pop_front()
+	if not data: return
+	(line_anims[line_idx] as Animation).track_set_path(0, data[1])
+	if data[0]:
+		(line_anim_players[line_idx] as AnimationPlayer).play("Anim")
+	else:
+		(line_anim_players[line_idx] as AnimationPlayer).play_backwards("Anim")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
