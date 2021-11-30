@@ -124,8 +124,8 @@ func _input(event : InputEvent) -> void:
 
 
 func _size_changed() -> void:
-	var viewport : Viewport = get_tree().root as Viewport
-	var panel : Panel = $Panel as Panel
+	var viewport := get_tree().root as Viewport
+	var panel := $Panel as Panel
 	
 	panel.rect_position = -viewport.size
 	panel.rect_size = viewport.size * 2
